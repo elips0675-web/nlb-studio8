@@ -62,6 +62,7 @@ export function Header() {
               { name: 'Мероприятия', href: '/all-events' },
               { name: 'Услуги', href: '/services' },
               { name: 'Электронный каталог', href: '/books-catalog' },
+              { name: 'Интерактивная карта', href: '/interactive-map' },
             ].map((item, index) => (
               <motion.div
                 key={item.name}
@@ -151,6 +152,7 @@ export function Header() {
                 { name: 'Мероприятия', href: '/all-events' },
                 { name: 'Услуги', href: '/services' },
                 { name: 'Электронный каталог', href: '/books-catalog' },
+                { name: 'Интерактивная карта', href: '/interactive-map' },
               ].map((item) => (
                 <Link
                   key={item.name}

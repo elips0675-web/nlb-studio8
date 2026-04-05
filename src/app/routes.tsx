@@ -16,6 +16,7 @@ import KidsZoneDetailPage from "./pages/kids-zone-detail";
 import LectureHallDetailPage from "./pages/lecture-hall-detail";
 import ConcertHallDetailPage from "./pages/concert-hall-detail";
 import PrintingOrderConfirmation from "./pages/printing-order-confirmation";
+import InteractiveMapPage from "./pages/interactive-map";
 
 export const router = createBrowserRouter([
   {
@@ -85,5 +86,9 @@ export const router = createBrowserRouter([
   {
     path: "/notifications",
     Component: NotificationsPage,
+  },
+  {
+    path: "/interactive-map",
+    Component: InteractiveMapPage,
   },
 ]);
