@@ -41,7 +41,7 @@ export function News() {
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
             Новости
           </h2>
-          <Link to="/all-news" className="px-6 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-full hover:shadow-lg transition-all font-semibold flex items-center gap-2">
+          <Link to="/all-news" className="px-6 py-3 bg-gradient-to-r from-red-600 to-orange-500 text-white rounded-full hover:shadow-lg transition-all font-semibold flex items-center gap-2">
             <span>Все новости</span>
             <ArrowRight className="w-5 h-5" />
           </Link>

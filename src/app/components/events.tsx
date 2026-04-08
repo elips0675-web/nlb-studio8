@@ -69,7 +69,7 @@ export function Events() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <span className="inline-block px-4 py-2 bg-purple-50 text-purple-600 rounded-full text-sm mb-4">
+          <span className="inline-block px-4 py-2 bg-green-50 text-green-600 rounded-full text-sm mb-4">
             События
           </span>
           <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-4">
@@ -110,7 +110,7 @@ export function Events() {
 
               {/* Content */}
               <div className="p-6">
-                <h3 className="text-xl font-semibold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors">
+                <h3 className="text-xl font-semibold text-gray-900 mb-2 group-hover:text-green-600 transition-colors">
                   {event.title}
                 </h3>
                 <p className="text-gray-600 mb-4 line-clamp-2">
@@ -134,7 +134,7 @@ export function Events() {
                 </div>
 
                 {/* Button */}
-                <button className="w-full py-3 bg-gray-100 hover:bg-gradient-to-r hover:from-blue-600 hover:to-purple-600 hover:text-white text-gray-900 rounded-xl transition-all font-medium">
+                <button className="w-full py-3 bg-gray-100 hover:bg-gradient-to-r hover:from-green-500 hover:to-emerald-600 hover:text-white text-gray-900 rounded-xl transition-all font-medium">
                   Зарегистрироваться
                 </button>
               </div>
@@ -148,19 +148,19 @@ export function Events() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="relative bg-gradient-to-r from-blue-600 to-purple-600 rounded-3xl p-6 sm:p-8 overflow-hidden"
+          className="relative bg-gradient-to-r from-emerald-500 to-green-600 rounded-3xl p-6 sm:p-8 overflow-hidden"
         >
           <div className="relative z-10 flex flex-col items-center text-center max-w-xl mx-auto">
             <h3 className="text-3xl sm:text-4xl font-bold text-white mb-4">
               Не пропустите наши события
             </h3>
-            <p className="text-blue-100 text-lg mb-6">
+            <p className="text-green-100 text-lg mb-6">
               Подпишитесь на рассылку и получайте уведомления о новых мероприятиях
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Dialog>
                 <DialogTrigger asChild>
-                  <button className="px-8 py-3 bg-white text-blue-600 rounded-full font-medium hover:shadow-xl transition-shadow whitespace-nowrap">
+                  <button className="px-8 py-3 bg-white text-green-600 rounded-full font-medium hover:shadow-xl transition-shadow whitespace-nowrap">
                     Подписаться
                   </button>
                 </DialogTrigger>
@@ -181,21 +181,21 @@ export function Events() {
                       placeholder="Ваш email"
                       value={email}
                       onChange={(e) => setEmail(e.target.value)}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-green-500 focus:border-transparent transition-all"
                     />
                   </div>
                   <DialogFooter>
                     <button
                       type="button"
                       onClick={handleSubscribe}
-                      className="w-full py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-xl hover:shadow-lg transition-all font-medium"
+                      className="w-full py-3 bg-gradient-to-r from-emerald-500 to-green-600 text-white rounded-xl hover:shadow-lg transition-all font-medium"
                     >
                       Подписаться
                     </button>
                   </DialogFooter>
                 </DialogContent>
               </Dialog>
-              <a href="/all-events" className="px-8 py-3 bg-white/20 text-white rounded-full font-medium hover:bg-white/30 transition-shadow whitespace-nowrap">
+              <a href="/all-events" className="px-10 py-4 bg-green-600 text-white rounded-full font-bold hover:bg-green-700 hover:shadow-lg transition-all whitespace-nowrap">
                 Посмотреть все
               </a>
             </div>
@@ -203,7 +203,7 @@ export function Events() {
 
           {/* Decorative elements */}
           <div className="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full blur-3xl" />
-          <div className="absolute bottom-0 left-0 w-64 h-64 bg-purple-800/20 rounded-full blur-3xl" />
+          <div className="absolute bottom-0 left-0 w-64 h-64 bg-green-800/20 rounded-full blur-3xl" />
         </motion.div>
       </div>
     </section>

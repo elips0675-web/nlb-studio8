@@ -1,23 +1,23 @@
 import { createBrowserRouter } from "react-router-dom";
-import Home from "./pages/home";
-import ServicesPage from "./pages/services-page";
-import ServiceDetailPage from "./pages/service-detail";
-import PrintingServiceDetail from "./pages/printing-service-detail";
-import PrintingServicesCatalog from "./pages/printing-services-catalog";
-import AllEventsPage from "./pages/all-events";
-import AllNewsPage from "./pages/all-news-page";
-import BooksCatalog from "./pages/books-catalog";
-import RegistrationPage from "./pages/registration";
-import ProfilePage from "./pages/profile";
-import BookDetailPage from "./pages/book-detail";
-import NotificationsPage from "./pages/notifications";
-import CafeDetailPage from "./pages/cafe-detail";
-import KidsZoneDetailPage from "./pages/kids-zone-detail";
-import LectureHallDetailPage from "./pages/lecture-hall-detail";
-import ConcertHallDetailPage from "./pages/concert-hall-detail";
-import PrintingOrderConfirmation from "./pages/printing-order-confirmation";
-import InteractiveMapPage from "./pages/interactive-map";
-import MinskMapPage from "./pages/minsk-map";
+import Home from "./page-templates/home";
+import ServicesPage from "./page-templates/services-page";
+import ServiceDetailPage from "./page-templates/service-detail";
+import PrintingServiceDetail from "./page-templates/printing-service-detail";
+import PrintingServicesCatalog from "./page-templates/printing-services-catalog";
+import AllEventsPage from "./page-templates/all-events";
+import AllNewsPage from "./page-templates/all-news-page";
+import BooksCatalog from "./page-templates/books-catalog";
+import RegistrationPage from "./page-templates/registration";
+import ProfilePage from "./page-templates/profile";
+import BookDetailPage from "./page-templates/book-detail";
+import NotificationsPage from "./page-templates/notifications";
+import CafeDetailPage from "./page-templates/cafe-detail";
+import KidsZoneDetailPage from "./page-templates/kids-zone-detail";
+import LectureHallDetailPage from "./page-templates/lecture-hall-detail";
+import ConcertHallDetailPage from "./page-templates/concert-hall-detail";
+import PrintingOrderConfirmation from "./page-templates/printing-order-confirmation";
+import InteractiveMapPage from "./page-templates/interactive-map";
+import MinskMapPage from "./page-templates/minsk-map";
 
 export const router = createBrowserRouter([
   {

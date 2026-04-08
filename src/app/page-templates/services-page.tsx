@@ -160,7 +160,7 @@ const printingServices = [
     icon: Printer,
     title: 'Печать и копирование',
     description: 'Ч/б и цветная печать, копирование. Печать с USB и e-mail.',
-    image: 'https://images.unsplash.com/photo-1771173479042-810085465e49?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxvZmZpY2UlMjBkb2N1bWVudHMlMjBwcmludGluZ3xlbnwxfHx8fDE3NzUwNTcxNDR8MA&ixlib=rb-4.1.0&q=80&w=1080',
+    image: 'https://images.unsplash.com/photo-1771173479042-810085465e49?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxvZmZpY2UlMjBkb2N1bWVudHMlMjBwcmludGluZ3xlbnwxfHx8fDE3NzUwNTcxNDR8MA&ixlib-rb-4.1.0&q=80&w=1080',
     prices: [
       { name: 'А4 ч/б (печать/копир.)', price: '5₽' },
       { name: 'А4 цвет (печать/копир.)', price: '15₽' },
@@ -174,7 +174,7 @@ const printingServices = [
     icon: ScanLine,
     title: 'Сканирование',
     description: 'Профессиональное сканирование документов и фотографий.',
-    image: 'https://images.unsplash.com/photo-1581094794329-c8592a1881d8?ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzY2FubmVyJTIwZG9jdW1lbnR8ZW58MHx8fHwxNzE0NTg0NTI5fDA&ixlib=rb-4.0.3&w=1080',
+    image: 'https://images.unsplash.com/photo-1581094794329-c8592a1881d8?ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzY2FubmVyJTIwZG9jdW1lbnR8ZW58MHx8fHwxNzE0NTg0NTI5fDA&ixlib-rb-4.0.3&w=1080',
     prices: [
       { name: 'Сканирование А4', price: '10₽' },
       { name: 'Сканирование А3', price: '20₽' },
@@ -188,7 +188,7 @@ const printingServices = [
     icon: BookOpen,
     title: 'Переплёт и ламинирование',
     description: 'Различные виды переплёта и защитное ламинирование.',
-    image: 'https://images.unsplash.com/photo-1762113246719-1a6adc837209?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxib29rYmluZGluZyUyMGhhcmRjb3ZlciUyMGJvb2tzfGVufDF8fHx8MTc3NTA1NzE0N3ww&ixlib=rb-4.1.0&q=80&w=1080',
+    image: 'https://images.unsplash.com/photo-1762113246719-1a6adc837209?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxib29rYmluZGluZyUyMGhhcmRjb3ZlciUyMGJvb2tzfGVufDF8fHx8MTc3NTA1NzE0N3ww&ixlib-rb-4.1.0&q=80&w=1080',
     prices: [
       { name: 'Скрепка (до 40 л.)', price: '30₽' },
       { name: 'Пружина (до 150 л.)', price: '100₽' },
@@ -202,7 +202,7 @@ const printingServices = [
     icon: CreditCard,
     title: 'Визитки',
     description: 'Профессиональная печать визитных карточек',
-    image: 'https://images.unsplash.com/photo-1718670013921-2f144aba173a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwcmludGluZyUyMHByZXNzJTIwYnVzaW5lc3MlMjBjYXJkc3xlbnwxfHx8fDE3NzUwNTcxNDR8MA&ixlib=rb-4.1.0&q=80&w=1080',
+    image: 'https://images.unsplash.com/photo-1718670013921-2f144aba173a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwcmludGluZyUyMHByZXNzJTIwYnVzaW5lc3MlMjBjYXJkc3xlbnwxfHx8fDE3NzUwNTcxNDR8MA&ixlib-rb-4.1.0&q=80&w=1080',
     prices: [
       { name: 'Односторонние (100 шт.)', price: '400₽' },
       { name: 'Двухсторонние (100 шт.)', price: '600₽' },
@@ -216,7 +216,7 @@ const printingServices = [
     icon: FileText,
     title: 'Брошюры и буклеты',
     description: 'Печать рекламных материалов и каталогов',
-    image: 'https://images.unsplash.com/photo-1612351217829-9e467539406f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxicm9jaHVyZXMlMjBmbHllcnMlMjBjYXRhbG9nfGVufDF8fHx8MTc3NTA1NzE0NHww&ixlib=rb-4.1.0&q=80&w=1080',
+    image: 'https://images.unsplash.com/photo-1612351217829-9e467539406f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxicm9jaHVyZXMlMjBmbHllcnMlMjBjYXRhbG9nfGVufDF8fHx8MTc3NTA1NzE0NHww&ixlib-rb-4.1.0&q=80&w=1080',
     prices: [
       { name: 'А4 буклет (2 фальца)', price: '50₽' },
       { name: 'А5 брошюра (8 стр.)', price: '150₽' },
@@ -230,7 +230,7 @@ const printingServices = [
     icon: Package,
     title: 'Широкоформатная печать',
     description: 'Баннеры, плакаты и постеры любого размера',
-    image: 'https://images.unsplash.com/photo-1595142545813-06fee27f3dcb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxiYW5uZXIlMjBwb3N0ZXIlMjBwcmludGluZ3xlbnwxfHx8fDE3NzUwNTcxNDR8MA&ixlib=rb-4.1.0&q=80&w=1080',
+    image: 'https://images.unsplash.com/photo-1595142545813-06fee27f3dcb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxiYW5uZXIlMjBwb3N0ZXIlMjBwcmludGluZ3xlbnwxfHx8fDE3NzUwNTcxNDR8MA&ixlib-rb-4.1.0&q=80&w=1080',
     prices: [
       { name: 'Плакат А2 (бумага)', price: '200₽' },
       { name: 'Плакат А1 (холст)', price: '700₽' },
@@ -377,6 +377,19 @@ export default function ServicesPage() {
                 </motion.div>
               );
             })}
+          </div>
+        </div>
+      </section>
+
+      <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
+              Комфорт и технологии для вашего обучения
+            </h2>
+            <p className="text-lg sm:text-xl text-gray-600 max-w-2xl mx-auto">
+              Мы создали идеальные условия для тех, кто стремится к знаниям. В вашем распоряжении — современные рабочие зоны, оборудованные всем необходимым для продуктивной учёбы и исследований.
+            </p>
           </div>
         </div>
       </section>

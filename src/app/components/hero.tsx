@@ -81,7 +81,7 @@ export function Hero() {
             >
               {slides[currentSlide].subtitle}
             </motion.p>
-            <motion.button className="px-8 py-4 bg-gradient-to-r from-green-500 to-red-500 text-white rounded-full hover:shadow-xl transition-shadow flex items-center justify-center gap-2 group mx-auto">
+            <motion.button className="px-8 py-4 bg-gradient-to-r from-emerald-500 to-green-600 text-white rounded-full hover:shadow-xl transition-shadow flex items-center justify-center gap-2 group mx-auto">
               {slides[currentSlide].cta}
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </motion.button>
@@ -92,13 +92,13 @@ export function Hero() {
       {/* Arrow Buttons */}
       <button 
         onClick={prevSlide}
-        className="absolute top-1/2 left-4 md:left-8 -translate-y-1/2 z-20 bg-white/20 hover:bg-white/40 p-2 rounded-full transition-colors"
+        className="absolute top-1/2 left-4 md:left-8 -translate-y-1/2 z-20 p-2 rounded-full transition-colors hover:bg-black/20"
       >
         <ChevronLeft className="w-6 h-6" />
       </button>
       <button 
         onClick={nextSlide}
-        className="absolute top-1/2 right-4 md:right-8 -translate-y-1/2 z-20 bg-white/20 hover:bg-white/40 p-2 rounded-full transition-colors"
+        className="absolute top-1/2 right-4 md:right-8 -translate-y-1/2 z-20 p-2 rounded-full transition-colors hover:bg-black/20"
       >
         <ChevronRight className="w-6 h-6" />
       </button>
@@ -109,7 +109,7 @@ export function Hero() {
             key={index}
             onClick={() => setCurrentSlide(index)}
             className={`w-3 h-3 rounded-full transition-colors ${
-              currentSlide === index ? 'bg-white' : 'bg-white/50 hover:bg-white'
+              currentSlide === index ? 'bg-emerald-500' : 'bg-emerald-500/50 hover:bg-emerald-500'
             }`}
           />
         ))}
