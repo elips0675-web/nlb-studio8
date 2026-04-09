@@ -5,11 +5,11 @@ import Slider from 'react-slick';
 import { Header } from '../components/header';
 import { Footer } from '../components/footer';
 import { ImageWithFallback } from '../components/figma/ImageWithFallback';
-import { Printer, FileText, CreditCard, BookOpen, Package, ArrowRight, Check, Plus, Minus, CupSoda, Shirt, GalleryHorizontal, ChevronLeft, ChevronRight, Upload } from 'lucide-react';
+import { Printer, FileText, CreditCard, BookOpen, Package, ArrowRight, Check, Plus, Minus, CupSoda, Shirt, GalleryHorizontal, ChevronLeft, ChevronRight, Upload, ScanLine } from 'lucide-react';
 
 const printingServiceDetails = {
-  'paper-printing': {
-    id: 'paper-printing',
+  'document-printing': {
+    id: 'document-printing',
     icon: Printer,
     title: 'Печать документов',
     subtitle: 'Чёрно-белая и цветная печать любых форматов',
@@ -33,6 +33,34 @@ const printingServiceDetails = {
         format: { 'А3': 2 },
         color: { 'Цветная': 3 },
         paper: { '120 г/м²': 1.5, '160 г/м² (глянец)': 2.5 },
+      },
+    }
+  },
+  'scanning': {
+    id: 'scanning',
+    icon: ScanLine,
+    title: 'Сканирование',
+    subtitle: 'Профессиональное сканирование документов и фотографий.',
+    description: 'Профессиональное сканирование документов и фотографий.',
+    fullDescription: 'Мы предлагаем высококачественное сканирование документов, фотографий, чертежей и других материалов. Используем профессиональные сканеры, обеспечивающие высокую детализацию и точную цветопередачу. Отсканированные изображения могут быть сохранены в различных форматах (PDF, JPEG, TIFF) и отправлены вам на e-mail или записаны на USB-накопитель.',
+    color: 'from-teal-500 to-emerald-500',
+    bgColor: 'bg-teal-50',
+    images: [
+      'https://images.unsplash.com/photo-1581094794329-c8592a1881d8?ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzY2FubmVyJTIwZG9jdW1lbnR8ZW58MHx8fHwxNzE0NTg0NTI5fDA&ixlib=rb-4.0.3&w=1080',
+      'https://images.unsplash.com/photo-1517436034038-e694b8304595?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxsYXNlciUyMHByaW50ZXIlMjBvZmZpY2V8ZW58MXx8fHwxNzc1MzAxMjY0fDA&ixlib=rb-4.1.0&q=80&w=1080',
+      'https://images.unsplash.com/photo-1604363239242-491b4299d0a6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzdHVkZW50JTIwcGFwZXJzJTIwcHJpbnRlZHxlbnwxfHx8fDE3NzUzMDEyNjV8MA&ixlib=rb-4.1.0&q=80&w=1080',
+    ],
+    calculator: {
+      options: [
+        { id: 'format', name: 'Формат', type: 'radio', values: ['А4', 'А3'], default: 'А4' },
+        { id: 'resolution', name: 'Разрешение', type: 'select', values: ['300 dpi', '600 dpi'], default: '300 dpi' },
+        { id: 'output', name: 'Вывод', type: 'radio', values: ['На USB', 'На E-mail'], default: 'На USB' },
+      ],
+      pricing: {
+        base: 10,
+        format: { 'А3': 2 },
+        resolution: { '600 dpi': 1.5 },
+        output: { 'На E-mail': 1.2 },
       },
     }
   },
@@ -74,9 +102,9 @@ const printingServiceDetails = {
     color: 'from-green-500 to-emerald-500',
     bgColor: 'bg-green-50',
     images: [
-        'https://images.unsplash.com/photo-1612351217829-9e467539406f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxicm9jaHVyZXMlMjBmbHllcnMlMjBjYXRhbG9nfGVufDF8fHx8MTc3NTA1NzE0NHww&ixlib=rb-4.1.0&q=80&w=1080',
-        'https://images.unsplash.com/photo-1508704253597-d8975a6c6270?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwcm9kdWN0JTIwY2F0YWxvZyUyMG1hZ2F6aW5lfGVufDF8fHx8MTc3NTMwMTQ3OHww&ixlib=rb-4.1.0&q=80&w=1080',
-        'https://images.unsplash.com/photo-1582298622956-1a7428f28829?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxyZXN0YXVyYW50JTIwbWVudSUyMGRlc2lnbnxlbnwxfHx8fDE3NzUzMDE0Nzh8MA&ixlib=rb-4.1.0&q=80&w=1080',
+        'https://images.unsplash.com/photo-1612351217829-9e467539406f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxicm9jaHVyZXMlMjBmbHllcnMlMjBjYXRhbG9nfGVufDF8fHx8MTc3NTA1NzE0NHww&ixlib-rb-4.1.0&q=80&w=1080',
+        'https://images.unsplash.com/photo-1508704253597-d8975a6c6270?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwcm9kdWN0JTIwY2F0YWxvZyUyMG1hZ2F6aW5lfGVufDF8fHx8MTc3NTMwMTQ3OHww&ixlib-rb-4.1.0&q=80&w=1080',
+        'https://images.unsplash.com/photo-1582298622956-1a7428f28829?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxyZXN0YXVyYW50JTIwbWVudSUyMGRlc2lnbnxlbnwxfHx8fDE3NzUzMDE0Nzh8MA&ixlib-rb-4.1.0&q=80&w=1080',
     ],
     calculator: {
         options: [
@@ -102,9 +130,9 @@ const printingServiceDetails = {
     color: 'from-orange-500 to-red-500',
     bgColor: 'bg-orange-50',
     images: [
-        'https://images.unsplash.com/photo-1595142545813-06fee27f3dcb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxiYW5uZXIlMjBwb3N0ZXIlMjBwcmludGluZ3xlbnwxfHx8fDE3NzUwNTcxNDR8MA&ixlib=rb-4.1.0&q=80&w=1080',
-        'https://images.unsplash.com/photo-1531299974639-c56c2c908585?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzaG9wJTIwd2luZG93JTIwZGVjYWx8ZW58MXx8fHwxNzc1MzAxNTMxfDA&ixlib=rb-4.1.0&q=80&w=1080',
-        'https://images.unsplash.com/photo-1622737133809-d9b0a79366e0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxpbnRlcmlvciUyMHByaW50JTIwcG9zdGVyfGVufDF8fHx8MTc3NTMwMTUzMnww&ixlib=rb-4.1.0&q=80&w=1080',
+        'https://images.unsplash.com/photo-1595142545813-06fee27f3dcb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxiYW5uZXIlMjBwb3N0ZXIlMjBwcmludGluZ3xlbnwxfHx8fDE3NzUwNTcxNDR8MA&ixlib-rb-4.1.0&q=80&w=1080',
+        'https://images.unsplash.com/photo-1531299974639-c56c2c908585?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzaG9wJTIwd2luZG93JTIwZGVjYWx8ZW58MXx8fHwxNzc1MzAxNTMxfDA&ixlib-rb-4.1.0&q=80&w=1080',
+        'https://images.unsplash.com/photo-1622737133809-d9b0a79366e0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxpbnRlcmlvciUyMHByaW50JTIwcG9zdGVyfGVufDF8fHx8MTc3NTMwMTUzMnww&ixlib-rb-4.1.0&q=80&w=1080',
     ],
     calculator: {
         options: [
@@ -128,9 +156,9 @@ const printingServiceDetails = {
     color: 'from-indigo-500 to-purple-500',
     bgColor: 'bg-indigo-50',
     images: [
-        'https://images.unsplash.com/photo-1762113246719-1a6adc837209?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxib29rYmluZGluZyUyMGhhcmRjb3ZlciUyMGJvb2tzfGVufDF8fHx8MTc3NTA1NzE0N3ww&ixlib=rb-4.1.0&q=80&w=1080',
-        'https://images.unsplash.com/photo-1541963463532-d68292c34b19?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxib29rcyUyMHNwaW5lfGVufDF8fHx8MTc3NTMwMTU4Mnww&ixlib=rb-4.1.0&q=80&w=1080',
-        'https://images.unsplash.com/photo-1593340555982-32a8a183ab3a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxkaXBsb21hJTIwcHJvamVjdCUyMGJpbmRpbmd8ZW58MXx8fHwxNzc1MzAxNTgzfDA&ixlib=rb-4.1.0&q=80&w=1080',
+        'https://images.unsplash.com/photo-1762113246719-1a6adc837209?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxib29rYmluZGluZyUyMGhhcmRjb3ZlciUyMGJvb2tzfGVufDF8fHx8MTc3NTA1NzE0N3ww&ixlib-rb-4.1.0&q=80&w=1080',
+        'https://images.unsplash.com/photo-1541963463532-d68292c34b19?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxib29rcyUyMHNwaW5lfGVufDF8fHx8MTc3NTMwMTU4Mnww&ixlib-rb-4.1.0&q=80&w=1080',
+        'https://images.unsplash.com/photo-1593340555982-32a8a183ab3a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxkaXBsb21hJTIwcHJvamVjdCUyMGJpbmRpbmd8ZW58MXx8fHwxNzc1MzAxNTgzfDA&ixlib-rb-4.1.0&q=80&w=1080',
     ],
     calculator: {
         options: [
@@ -141,6 +169,32 @@ const printingServiceDetails = {
             base: 150, 
             type: { 'Термоклей': 1.8, 'Твердый': 4 },
             cover: { 'Картон+картон': 1.2 },
+        },
+    }
+},
+'canvas-printing': {
+    id: 'canvas-printing',
+    icon: GalleryHorizontal,
+    title: 'Печать на холсте',
+    subtitle: 'Интерьерная печать на натуральном холсте',
+    description: 'Фотографии, репродукции картин, модульные картины. Яркие и стойкие краски.',
+    fullDescription: 'Мы печатаем на натуральном хлопковом холсте, что обеспечивает превосходное качество и долговечность изображений. Используются пигментные чернила, которые не выцветают со временем и безопасны для здоровья. Возможна натяжка на подрамник и покрытие защитным лаком.',
+    color: 'from-amber-500 to-yellow-500',
+    bgColor: 'bg-amber-50',
+    images: [
+        'https://images.unsplash.com/photo-1622737133809-d9b0a79366e0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxpbnRlcmlvciUyMHByaW50JTIwcG9zdGVyfGVufDF8fHx8MTc3NTMwMTUzMnww&ixlib=rb-4.1.0&q=80&w=1080',
+        'https://images.unsplash.com/photo-154184859-5989b3889895?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwb3N0ZXIlMjBwcmludGluZyUyMHdhbGx8ZW58MXx8fHwxNzc1MzAzMTExfDA&ixlib-rb-4.1.0&q=80&w=1080',
+    ],
+    allowImageUpload: true,
+    calculator: {
+        options: [
+            { id: 'size', name: 'Размер', type: 'radio', values: ['30x40', '40x60', '60x90'], default: '40x60' },
+            { id: 'stretcher', name: 'Натяжка на подрамник', type: 'select', values: ['Да', 'Нет'], default: 'Да' },
+        ],
+        pricing: {
+            base: 900,
+            size: { '30x40': 0.6, '60x90': 1.8 },
+            stretcher: { 'Нет': 0.9 },
         },
     }
 },
@@ -155,7 +209,7 @@ const printingServiceDetails = {
     bgColor: 'bg-red-50',
     images: [
         'https://images.unsplash.com/photo-1516788419857-a41a4c921102?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjdXN0b20lMjBtdWclMjBwcmludGluZ3xlbnwxfHx8fDE3NzUzMDMwMTF8MA&ixlib=rb-4.1.0&q=80&w=1080',
-        'https://images.unsplash.com/photo-1622039603958-3f8287734947?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzdWJsaW1hdGlvbiUyMG11Z3xlbnwxfHx8fDE3NzUzMDMwMTJ8MA&ixlib=rb-4.1.0&q=80&w=1080',
+        'https://images.unsplash.com/photo-1622039603958-3f8287734947?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzdWJsaW1hdGlvbiUyMG11Z3xlbnwxfHx8fDE3NzUzMDMwMTJ8MA&ixlib-rb-4.1.0&q=80&w=1080',
     ],
     allowImageUpload: true,
     calculator: {
@@ -180,8 +234,8 @@ const printingServiceDetails = {
     color: 'from-sky-500 to-fuchsia-500',
     bgColor: 'bg-sky-50',
     images: [
-        'https://images.unsplash.com/photo-1576566588028-4147f3842f27?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx0LXNoaXJ0JTIwcHJpbnRpbmdfZW58MXx8fHwxNzc1MzAzMDYxfDA&ixlib=rb-4.1.0&q=80&w=1080',
-        'https://images.unsplash.com/photo-1593414920033-9a3d1d1b3f94?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjdXN0b20lMjB0LXNoaXJ0JTIwZGVzaWdufGVufDF8fHx8MTc3NTMwMzA2Mnww&ixlib=rb-4.1.0&q=80&w=1080',
+        'https://images.unsplash.com/photo-1576566588028-4147f3842f27?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx0LXNoaXJ0JTIwcHJpbnRpbmdfZW58MXx8fHwxNzc1MzAzMDYxfDA&ixlib-rb-4.1.0&q=80&w=1080',
+        'https://images.unsplash.com/photo-1593414920033-9a3d1d1b3f94?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjdXN0b20lMjB0LXNoaXJ0JTIwZGVzaWdufGVufDF8fHx8MTc3NTMwMzA2Mnww&ixlib-rb-4.1.0&q=80&w=1080',
     ],
     allowImageUpload: true,
     calculator: {
@@ -206,8 +260,8 @@ const printingServiceDetails = {
     color: 'from-lime-500 to-teal-500',
     bgColor: 'bg-lime-50',
     images: [
-        'https://images.unsplash.com/photo-154184859-5989b3889895?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwb3N0ZXIlMjBwcmludGluZyUyMHdhbGx8ZW58MXx8fHwxNzc1MzAzMTExfDA&ixlib=rb-4.1.0&q=80&w=1080',
-        'https://images.unsplash.com/photo-1506152839139-5135a5a35041?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxhcnQlMjBwb3N0ZXIlMjBtb2NrdXB8ZW58MXx8fHwxNzc1MzAzMTExfDA&ixlib=rb-4.1.0&q=80&w=1080',
+        'https://images.unsplash.com/photo-154184859-5989b3889895?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwb3N0ZXIlMjBwcmludGluZyUyMHdhbGx8ZW58MXx8fHwxNzc1MzAzMTExfDA&ixlib-rb-4.1.0&q=80&w=1080',
+        'https://images.unsplash.com/photo-1506152839139-5135a5a35041?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxhcnQlMjBwb3N0ZXIlMjBtb2NrdXB8ZW58MXx8fHwxNzc1MzAzMTExfDA&ixlib-rb-4.1.0&q=80&w=1080',
     ],
     allowImageUpload: true,
     calculator: {

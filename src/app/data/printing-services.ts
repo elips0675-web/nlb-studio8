@@ -6,7 +6,7 @@ export const catalogServices = [
       icon: Printer,
       title: 'Печать и копирование',
       description: 'Ч/б и цветная печать, копирование. Печать с USB и e-mail.',
-      image: 'https://images.unsplash.com/photo-1771173479042-810085465e49?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxvZmZpY2UlMjBkb2N1bWVudHMlMjBwcmludGluZ3xlbnwxfHx8fDE3NzUwNTcxNDR8MA&ixlib-rb-4.1.0&q=80&w=1080',
+      image: 'https://images.unsplash.com/photo-1771173479042-810085465e49?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxvZmZpY2UlMjBkb2N1bWVudHMlMjBwcmludGluZ3xlbnwxfHx8fDE3NzUwNTcxNDR8MA&ixlib=rb-4.1.0&q=80&w=1080',
       prices: [
         { name: 'А4 ч/б (печать/копир.)', price: '5₽' },
         { name: 'А4 цвет (печать/копир.)', price: '15₽' },
@@ -34,7 +34,7 @@ export const catalogServices = [
       icon: BookOpen,
       title: 'Переплёт и ламинирование',
       description: 'Различные виды переплёта и защитное ламинирование.',
-      image: 'https://images.unsplash.com/photo-1762113246719-1a6adc837209?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxib29rYmluZGluZyUyMGhhcmRjb3ZlciUyMGJvb2tzfGVufDF8fHx8MTc3NTA1NzE0N3ww&ixlib-rb-4.1.0&q=80&w=1080',
+      image: 'https://images.unsplash.com/photo-1762113246719-1a6adc837209?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxib29rYmluZGluZyUyMGhhcmRjb3ZlciUyMGJvb2tzfGVufDF8fHx8MTc3NTA1NzE0N3ww&ixlib=rb-4.1.0&q=80&w=1080',
       prices: [
         { name: 'Скрепка (до 40 л.)', price: '30₽' },
         { name: 'Пружина (до 150 л.)', price: '100₽' },
@@ -85,4 +85,46 @@ export const catalogServices = [
       ],
       color: 'from-orange-500 to-red-500',
   },
+  {
+      id: 'canvas-printing',
+      icon: GalleryHorizontal,
+      title: 'Печать на холсте',
+      description: 'Фотографии и репродукции на натуральном холсте.',
+      image: 'https://images.unsplash.com/photo-154184859-5989b3889895?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwb3N0ZXIlMjBwcmludGluZyUyMHdhbGx8ZW58MXx8fHwxNzc1MzAzMTExfDA&ixlib-rb-4.1.0&q=80&w=1080',
+      prices: [
+        { name: '30x40 см', price: '900₽' },
+        { name: '40x60 см', price: '1500₽' },
+        { name: '60x90 см', price: '2500₽' },
+        { name: 'Покрытие лаком', price: '+300₽' },
+      ],
+      color: 'from-lime-500 to-teal-500',
+  },
+  {
+      id: 'mugs',
+      icon: CupSoda,
+      title: 'Печать на кружках',
+      description: 'Кружки с вашим фото, логотипом или надписью.',
+      image: 'https://images.unsplash.com/photo-1516788419857-a41a4c921102?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjdXN0b20lMjBtdWclMjBwcmludGluZ3xlbnwxfHx8fDE3NzUzMDMwMTF8MA&ixlib-rb-4.1.0&q=80&w=1080',
+      prices: [
+        { name: 'Белая кружка', price: '350₽' },
+        { name: 'Кружка-хамелеон', price: '550₽' },
+        { name: 'Пивная кружка', price: '700₽' },
+        { name: 'Срочная печать', price: '+200₽' },
+      ],
+      color: 'from-red-500 to-amber-500',
+  },
+  {
+      id: 't-shirts',
+      icon: Shirt,
+      title: 'Печать на футболках',
+      description: 'Футболки с вашим дизайном, фото или логотипом.',
+      image: 'https://images.unsplash.com/photo-1576566588028-4147f3842f27?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx0LXNoaXJ0JTIwcHJpbnRpbmdfZW58MXx8fHwxNzc1MzAzMDYxfDA&ixlib-rb-4.1.0&q=80&w=1080',
+      prices: [
+        { name: 'Белая футболка (A4 принт)', price: '800₽' },
+        { name: 'Черная футболка (A4 принт)', price: '1000₽' },
+        { name: 'Свитшот (A4 принт)', price: '1500₽' },
+        { name: 'Принт на спине', price: '+300₽' },
+      ],
+      color: 'from-sky-500 to-fuchsia-500',
+  }
 ];
