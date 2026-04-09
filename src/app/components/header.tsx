@@ -123,7 +123,7 @@ export function Header() {
                 transition={{ duration: 0.5, delay: 0.8 }}
                 className="px-6 py-2 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-full hover:shadow-lg transition-shadow"
               >
-                Записаться
+                Вход
               </motion.button>
             </Link>
           </div>
@@ -179,7 +179,7 @@ export function Header() {
                 </Link>
                 <Link to="/registration" className="flex-1">
                   <button className="w-full px-6 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-full">
-                      Записаться
+                      Вход
                   </button>
                 </Link>
             </div>

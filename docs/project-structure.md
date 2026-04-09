@@ -1,92 +1,44 @@
+# Структура проекта
 
-.
-├── .idx
-│   └── dev.nix
-├── ATTRIBUTIONS.md
-├── README.md
-├── docs
-│   └── project-structure.md
-├── guidelines
-│   └── Guidelines.md
-├── index.html
-├── package-lock.json
-├── package.json
-├── postcss.config.mjs
-├── src
-│   ├── app
-│   │   ├── App.tsx
-│   │   ├── components
-│   │   │   ├── collections.tsx
-│   │   │   ├── events.tsx
-│   │   │   ├── figma
-│   │   │   │   └── ImageWithFallback.tsx
-│   │   │   ├── footer.tsx
-│   │   │   ├── header.tsx
-│   │   │   ├── hero.tsx
-│   │   │   ├── services.tsx
-│   │   │   └── ui
-│   │   │       ├── FabWidget.tsx
-│   │   │       ├── accordion.tsx
-│   │   │       ├── alert-dialog.tsx
-│   │   │       ├── alert.tsx
-│   │   │       ├── aspect-ratio.tsx
-│   │   │       ├── avatar.tsx
-│   │   │       ├── badge.tsx
-│   │   │       ├── breadcrumb.tsx
-│   │   │       ├── button.tsx
-│   │   │       ├── calendar.tsx
-│   │   │       ├── card.tsx
-│   │   │       ├── carousel.tsx
-│   │   │       ├── chart.tsx
-│   │   │       ├── checkbox.tsx
-│   │   │       ├── collapsible.tsx
-│   │   │       ├── command.tsx
-│   │   │       ├── context-menu.tsx
-│   │   │       ├── dialog.tsx
-│   │   │       ├── drawer.tsx
-│   │   │       ├── dropdown-menu.tsx
-│   │   │       ├── form.tsx
-│   │   │       ├── hover-card.tsx
-│   │   │       ├── input-otp.tsx
-│   │   │       ├── input.tsx
-│   │   │       ├── label.tsx
-│   │   │       ├── menubar.tsx
-│   │   │       ├── navigation-menu.tsx
-│   │   │       ├── pagination.tsx
-│   │   │       ├── popover.tsx
-│   │   │       ├── progress.tsx
-│   │   │       ├── radio-group.tsx
-│   │   │       ├── resizable.tsx
-│   │   │       ├── scroll-area.tsx
-│   │   │       ├── select.tsx
-│   │   │       ├── separator.tsx
-│   │   │       ├── sheet.tsx
-│   │   │       ├── sidebar.tsx
-│   │   │       ├── skeleton.tsx
-│   │   │       ├── slider.tsx
-│   │   │       ├── sonner.tsx
-│   │   │       ├── switch.tsx
-│   │   │       ├── table.tsx
-│   │   │       ├── tabs.tsx
-│   │   │       ├── textarea.tsx
-│   │   │       ├── toggle-group.tsx
-│   │   │       ├── toggle.tsx
-│   │   │       ├── tooltip.tsx
-│   │   │       ├── use-mobile.ts
-│   │   │       └── utils.ts
-│   │   ├── pages
-│   │   │   ├── home.tsx
-│   │   │   ├── printing-service-detail.tsx
-│   │   │   ├── printing-services-catalog.tsx
-│   │   │   ├── service-detail.tsx
-│   │   │   └── services-page.tsx
-│   │   └── routes.tsx
-│   ├── main.tsx
-│   └── styles
-│       ├── fab.css
-│       ├── fonts.css
-│       ├── index.css
-│       ├── slick.css
-│       ├── tailwind.css
-│       └── theme.css
-└── vite.config.ts
+Этот документ содержит подробный обзор структуры проекта, используемых технологий и основных зависимостей.
+
+## Технологии
+
+Проект создан с использованием следующих технологий:
+
+*   **Vite:** быстрый инструмент сборки, который обеспечивает более быструю и экономичную разработку современных веб-проектов.
+*   **React:** библиотека JavaScript для создания пользовательских интерфейсов.
+*   **TypeScript:** типизированное надмножество JavaScript, которое компилируется в простой JavaScript.
+*   **Tailwind CSS:** CSS-фреймворк, ориентированный на утилиты, для быстрой сборки пользовательских дизайнов.
+*   **pnpm:** быстрый и экономящий дисковое пространство менеджер пакетов.
+
+## Основные зависимости
+
+Проект использует набор зависимостей для предоставления дополнительной функциональности. Ниже приведены некоторые из ключевых зависимостей:
+
+*   **@radix-ui/react-***: коллекция низкоуровневых компонентов пользовательского интерфейса для создания высококачественных и доступных систем проектирования.
+*   **@mui/material**: обширная библиотека компонентов пользовательского интерфейса, реализующих Material Design от Google.
+*   **react-router-dom**: стандартная библиотека для маршрутизации в React.
+*   **framer-motion**: библиотека для создания анимации в React.
+*   **tailwindcss**: CSS-фреймворк, ориентированный на утилиты, для простого создания пользовательских дизайнов.
+
+## Скрипты
+
+Файл `package.json` включает следующие скрипты:
+
+*   **`dev`**: запускает сервер разработки с горячей перезагрузкой.
+*   **`build`**: собирает проект для производства.
+
+## Структура папок
+
+Проект имеет стандартную структуру папок, основными из которых являются:
+
+*   **`public`**: содержит статические ресурсы, которые являются общедоступными, такие как `index.html`, изображения и шрифты.
+*   **`src`**: содержит основной исходный код приложения, включая компоненты React, стили и шаблоны.
+*   **`src/app`**: основная папка приложения, которая содержит следующие подкаталоги:
+    *   **`components`**: повторно используемые компоненты пользовательского интерфейса.
+    *   **`page-templates`**: шаблоны для разных страниц приложения.
+    *   **`styles`**: глобальные стили и служебные классы.
+*   **`docs`**: содержит документацию по проекту, включая этот файл.
+
+Эта структура помогает поддерживать кодовую базу в организованном и удобном для сопровождения виде.
