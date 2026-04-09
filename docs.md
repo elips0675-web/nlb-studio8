@@ -64,3 +64,140 @@ npm run dev --prefix admin-demo
 *   Если вы хотите создать полностью уникальный дизайн с нуля и готовы потратить немного больше времени на настройку, посмотрите в сторону **Tailwind CSS**.
 
 В вашем случае, если вы переводите существующий сайт или начинаете новый стандартный проект, я бы рекомендовал остановиться на **Bootstrap**.
+
+## Интеграция Tailwind CSS в Битрикс
+
+Отличный вопрос! Интеграция Tailwind CSS в «1С-Битрикс» — это прекрасный способ модернизировать разработку и получить полный контроль над дизайном. В отличие от Bootstrap, Tailwind требует шага сборки, но настроить его не так сложно, как кажется.
+
+Вот пошаговое руководство, как это сделать правильно.
+
+### Основная идея
+
+Мы настроим Tailwind CSS так, чтобы он сканировал ваши `.php` файлы шаблона Битрикс, находил в них utility-классы (например, `text-red-500`, `p-4`, `flex`) и автоматически генерировал один-единственный CSS-файл, который вы подключите в шаблоне сайта.
+
+---
+
+### Пошаговая инструкция
+
+Предположим, ваш шаблон сайта находится в папке `/local/templates/my_template/`.
+
+**Шаг 1: Подготовка окружения**
+
+1.  **Установите Node.js и npm**, если они у вас не установлены.
+2.  Откройте терминал и перейдите в папку вашего шаблона:
+    ```bash
+    cd /path/to/your/project/local/templates/my_template/
+    ```
+3.  Инициализируйте Node.js проект. Эта команда создаст файл `package.json`:
+    ```bash
+    npm init -y
+    ```
+
+**Шаг 2: Установка Tailwind CSS**
+
+1.  Установите необходимые пакеты (`tailwindcss`, `postcss`, `autoprefixer`) как зависимости для разработки:
+    ```bash
+    npm install -D tailwindcss postcss autoprefixer
+    ```
+2.  Создайте конфигурационные файлы для Tailwind и PostCSS. Выполните команду:
+    ```bash
+    npx tailwindcss init -p
+    ```
+    Это создаст два файла: `tailwind.config.js` и `postcss.config.js`.
+
+**Шаг 3: Настройка Tailwind для сканирования шаблонов Битрикс**
+
+Это самый важный шаг. Вам нужно указать Tailwind, где находятся ваши файлы, чтобы он мог найти используемые классы.
+
+1.  Откройте файл `tailwind.config.js`.
+2.  Найдите ключ `content` и укажите пути к файлам вашего шаблона. Это должны быть `header.php`, `footer.php` и все файлы шаблонов компонентов.
+
+    ```javascript
+    /** @type {import('tailwindcss').Config} */
+    module.exports = {
+      content: [
+        // Основные файлы шаблона
+        "./header.php",
+        "./footer.php",
+        // Все шаблоны компонентов внутри этого шаблона сайта
+        "./components/**/*.php",
+        // Если вы используете JS-файлы для динамического добавления классов
+        "./script.js" 
+      ],
+      theme: {
+        extend: {},
+      },
+      plugins: [],
+    }
+    ```
+    *   **Совет:** Путь `./components/**/*.php` будет сканировать шаблоны компонентов Битрикс (например, `news.list`, `main.feedback` и т.д.), которые вы скопировали в свой шаблон сайта.
+
+**Шаг 4: Создание исходного CSS-файла**
+
+1.  Создайте папку (например, `src`) и в ней файл `input.css`.
+    `/local/templates/my_template/src/input.css`
+
+2.  Добавьте в этот файл три основные директивы Tailwind:
+    ```css
+    @tailwind base;
+    @tailwind components;
+    @tailwind utilities;
+    ```
+
+**Шаг 5: Настройка скриптов сборки**
+
+1.  Откройте ваш файл `package.json`.
+2.  Добавьте в раздел `"scripts"` команды для сборки и отслеживания изменений:
+
+    ```json
+    "scripts": {
+      "build": "tailwindcss -i ./src/input.css -o ./template_styles.css --minify",
+      "watch": "tailwindcss -i ./src/input.css -o ./template_styles.css --watch"
+    },
+    ```
+    *   `build`: Эта команда создаст финальный, сжатый CSS-файл `template_styles.css` для продакшена.
+    *   `watch`: Эта команда будет следить за изменениями в ваших `.php` и `.js` файлах и автоматически пересобирать `template_styles.css` во время разработки.
+
+**Шаг 6: Сборка и подключение CSS в Битриксе**
+
+1.  **Запустите сборку.** В терминале, находясь в папке шаблона, выполните:
+    ```bash
+    npm run build 
+    ```
+    В корне вашего шаблона появится файл `template_styles.css`.
+
+2.  **Подключите сгенерированный файл** в `header.php` вашего шаблона. Используйте стандартный API Битрикса:
+    ```php
+    <?php
+    // /local/templates/my_template/header.php
+
+    // ... другие подключения
+    use Bitrix\Main\Page\Asset;
+
+    // Подключаем наш скомпилированный CSS
+    Asset::getInstance()->addCss(SITE_TEMPLATE_PATH . '/template_styles.css'); 
+    ?>
+    ```
+
+**Шаг 7: Процесс разработки**
+
+1.  Во время разработки запускайте в терминале команду:
+    ```bash
+    npm run watch
+    ```
+2.  Теперь вы можете просто открывать `.php` файлы шаблонов (компонентов, `header.php` и т.д.) и добавлять классы Tailwind прямо в HTML.
+    ```html
+    <!-- Пример в каком-нибудь template.php -->
+    <div class="p-6 max-w-sm mx-auto bg-white rounded-xl shadow-lg flex items-center space-x-4">
+      <div class="shrink-0">
+        <img class="h-12 w-12" src="/path/to/logo.svg" alt="ChitChat Logo">
+      </div>
+      <div>
+        <div class="text-xl font-medium text-black">ChitChat</div>
+        <p class="text-slate-500">You have a new message!</p>
+      </div>
+    </div>
+    ```
+3.  При каждом сохранении файла Tailwind автоматически обновит `template_styles.css`, и вы сразу увидите изменения на сайте.
+
+Перед выгрузкой сайта на боевой сервер не забудьте один раз запустить `npm run build` для создания оптимизированной версии CSS.
