@@ -1,0 +1,46 @@
+<?
+$aMenuLinks = Array(
+	Array(
+		"Главная", 
+		"/", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"Новости", 
+		"/all-news/", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"Мероприятия", 
+		"/all-events/", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"Услуги", 
+		"/services/", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"Электронный каталог", 
+		"/books-catalog/", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"Интерактивная карта", 
+		"/interactive-map/", 
+		Array(), 
+		Array(), 
+		"" 
+	)
+);
+?>
